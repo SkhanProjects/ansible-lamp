@@ -1,0 +1,17 @@
+---
+
+- hosts: all
+
+  sudo : true
+
+  tasks:
+
+    - name: Update apt cache
+      apt:  update_cache=yes
+
+    - include: tasks/apache2.yml
+
+    - include: tasks/mysql.yml
+
+    - include: tasks/php.yml
+    
